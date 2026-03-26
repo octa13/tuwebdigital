@@ -1,17 +1,20 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+
 const nodemailer = require("nodemailer");
 
 const app = express();
 
-// Permite leer datos del formulario
-app.use(bodyParser.urlencoded({ extended: true }));
+//ESTO ES CLAVE
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Carpeta pública
 app.use(express.static("public"));
 
 // Ruta para recibir datos del formulario
 app.post("/enviar", async (req, res) => {
+
+    console.log(req.body);
 
     const { nombre, email, telefono, mensaje } = req.body;
 
@@ -40,11 +43,15 @@ Mensaje: ${mensaje}
     try {
         await transporter.sendMail(mailOptions);
         res.send("Mensaje enviado correctamente");
+        
     } catch (error) {
-    console.log("ERROR REAL:", error); // 🔥
+    console.log("ERROR REAL:", error); // 
     res.send("Error al enviar el mensaje");
     }
 });
+
+
+
 
 // Levantar servidor
 app.listen(3000, () => {

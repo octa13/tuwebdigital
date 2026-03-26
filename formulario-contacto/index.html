@@ -121,7 +121,7 @@
     <p class="textsub">¡Contactate y comentanos sobre tu proyecto!</p>
 
     <div class="contenedor-contacto">
-     <form class="formulario" action="/enviar" method="POST">
+     <form id="formulario" class="formulario">
         
         <label>Nombre y Apellido</label> 
         <input type="text" name="nombre" placeholder="Tu nombre completo" required> 
@@ -136,6 +136,7 @@
         <textarea name="mensaje" placeholder="sobre tu proyecto..." required></textarea>
 
         <button type="submit" class="enviar">Enviar Mensaje</button>
+        <!--<p id="respuesta" style="color: white; margin-top: 10px; background-color: red;"></p>-->
 
      </form>
   
@@ -156,6 +157,46 @@
 <script>
   AOS.init();
 </script>
+
+
+<script>
+const form = document.getElementById("formulario");
+const respuesta = document.getElementById("respuesta");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const datos = {
+        nombre: form.nombre.value,
+        email: form.email.value,
+        telefono: form.telefono.value,
+        mensaje: form.mensaje.value
+    };
+
+    try {
+        const res = await fetch("/enviar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json" // 🔥 CLAVE
+            },
+            body: JSON.stringify(datos) // 🔥 CLAVE
+        });
+
+        const texto = await res.text();
+        respuesta.textContent = texto;
+          form.reset(); 
+    } catch (error) {
+        respuesta.textContent = "Error al enviar";
+    }
+});
+</script>
+
+
+
+
+
+
+
 </body>
 
 
