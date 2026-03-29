@@ -693,3 +693,122 @@ footer .menu{
   opacity: 1;
   transform: translateY(0);
 }
+
+
+
+/*  -----------------------------------------  VERSIÓN MOVIL -----------------------------------------*/
+/*  -----------------------------------------  VERSIÓN MOVIL -----------------------------------------*/
+/*  -----------------------------------------  VERSIÓN MOVIL -----------------------------------------*/
+
+
+@media (max-width: 768px) {
+ 
+header{
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .logo{
+    margin: 0;
+  }
+
+  .menu{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  .herotext{
+    width: 100%;
+    margin: 0;
+  }
+
+  .text{
+    font-size: 32px;
+  }
+
+  .textsub{
+    margin-left: 0;
+    font-size: 16px;
+  }
+
+  .llamado{
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .servicios{
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .contenedor-servicios{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .beneficios{
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .tarjetas{
+    grid-template-columns: 1fr;
+  }
+
+  .t1, .t2, .t3, .t4{
+    width: 100%;
+    margin: 0;
+  }
+
+  /* corregir textos que están desplazados */
+
+  .t1 .textsub,
+  .t1 .textsub1,
+  .t3 .textsub,
+  .t3 .textsub1{
+    margin-left: 20px;
+  }
+
+  .contacto{
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .contenedor-contacto{
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  footer{
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+  }
+
+  footer .menu{
+    margin: 10px 0;
+  }
+
+  footer .textsub{
+    text-align: center;
+    margin: 0;
+  }
+
+  .whatsapp-btn img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .scroll-top-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+}
