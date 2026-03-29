@@ -12,7 +12,14 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
-<header>
+
+
+
+<body>
+
+
+
+  <header>
    
     <a href="index.html"><div class="logo"></div></a>
 
@@ -23,9 +30,6 @@
    </div> 
 
 </header>
-
-
-<body>
 
     <div class="hero">
         <div class="herotext">
@@ -121,7 +125,7 @@
     <p class="textsub">¡Contactate y comentanos sobre tu proyecto!</p>
 
     <div class="contenedor-contacto">
-     <form id="formulario" class="formulario">
+     <form id="formulario" class="formulario"> 
         
         <label>Nombre y Apellido</label> 
         <input type="text" name="nombre" placeholder="Tu nombre completo" required> 
@@ -136,7 +140,9 @@
         <textarea name="mensaje" placeholder="sobre tu proyecto..." required></textarea>
 
         <button type="submit" class="enviar">Enviar Mensaje</button>
-        <!--<p id="respuesta" style="color: white; margin-top: 10px; background-color: red;"></p>-->
+        <p id="respuesta" style="color: white; text-align: center; color: white;"></p>
+
+       
 
      </form>
   
@@ -147,60 +153,15 @@
         <a href="https://wa.me/3855154183" class="botonllama" target="_blank"><div class="redes2"><img src="imagenes/whatsapp.png" alt="" class="imag"><p class="instagrama">385 515483</p></div></a>
         <div class="redes3"><img src="imagenes/correo-electronico.png" alt="" class="imag"><p class="instagrama">tuwebd@gmail.com</p></div>
 
-        <p class="textsub">¡Hace click y realiza tu consulta!</p>
+        <p class="textsub">¡Realiza tu consulta!</p>
     </div>
 
     </div>
 </section>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>    
-<script>
-  AOS.init();
-</script>
 
 
-<script>
-const form = document.getElementById("formulario");
-const respuesta = document.getElementById("respuesta");
-
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const datos = {
-        nombre: form.nombre.value,
-        email: form.email.value,
-        telefono: form.telefono.value,
-        mensaje: form.mensaje.value
-    };
-
-    try {
-        const res = await fetch("/enviar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json" // 🔥 CLAVE
-            },
-            body: JSON.stringify(datos) // 🔥 CLAVE
-        });
-
-        const texto = await res.text();
-        respuesta.textContent = texto;
-          form.reset(); 
-    } catch (error) {
-        respuesta.textContent = "Error al enviar";
-    }
-});
-</script>
-
-
-
-
-
-
-
-</body>
-
-
-<footer>
+<footer id="pie">
     <div class="logo"></div>
     <div class="menu">
     <a href="" class="menu1">SERVICIOS</a>
@@ -210,5 +171,132 @@ form.addEventListener("submit", async (e) => {
     <p class="textsub">Copyright © 2026 tuWebdigital <br>
     Todos los derechos reservados.</p>
 </footer>
+
+
+
+
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>    
+<script>
+  AOS.init();
+</script>
+
+
+
+<a href="https://wa.me/3855154183" 
+   class="whatsapp-btn" 
+   target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script>
+const whatsappBtn = document.querySelector(".whatsapp-btn");
+const contacto = document.querySelector("#ac");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      whatsappBtn.classList.add("hidden");
+    } else {
+      whatsappBtn.classList.remove("hidden");
+    }
+  });
+});
+
+observer.observe(contacto);
+</script>
+
+
+<a href="#" class="scroll-top-btn">
+  ↑
+</a>
+
+<div id="noti" class="notificacion"></div>
+
+<script>
+const scrollBtn = document.querySelector(".scroll-top-btn");
+const contactos = document.querySelector("#ac");
+const footer = document.querySelector("#pie");
+
+const observers = new IntersectionObserver((entries) => {
+  let visible = false;
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      visible = true;
+    }
+  });
+
+  if (visible) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+// Observamos ambas secciones
+observers.observe(contactos);
+observers.observe(footer);
+</script>
+
+
+
+<script>
+const form = document.getElementById("formulario");
+const respuesta = document.getElementById("respuesta");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  try {
+    const res = await fetch("https://formspree.io/f/mlgojpyb", {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (res.ok) {
+      mostrarNotificacion("Mensaje enviado correctamente ", "#e25118");
+      respuesta.style.color = "lightgreen";
+      form.reset();
+    } else {
+      respuesta.textContent = "Error al enviar ❌";
+      respuesta.style.color = "red";
+    }
+
+  } catch (error) {
+    respuesta.textContent = "Error de conexión ❌";
+    respuesta.style.color = "red";
+  }
+});
+</script>
+
+
+<script>
+  const noti = document.getElementById("noti");
+
+function mostrarNotificacion(mensaje, color) {
+  noti.textContent = mensaje;
+  noti.style.background = color;
+  noti.classList.add("show");
+
+  setTimeout(() => {
+    noti.classList.remove("show");
+  }, 3000);
+}
+</script>
+
+
+
+
+</body>
+
+
+
 
 </html>

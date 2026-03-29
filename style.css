@@ -418,6 +418,7 @@ margin-left: 300px;
     gap: 30px;
     margin: 40px 50px;
     align-items: stretch; /* 🔥 misma altura */
+    height: 600px;
 }
 
 
@@ -441,6 +442,7 @@ margin-left: 300px;
     background: linear-gradient(135deg, #1c2638, #2a3b5f);
     border-radius: 8px;
     flex: 1; /* 🔥 ocupa el espacio restante */
+    height: 600px;
 }
 
 
@@ -619,4 +621,75 @@ footer .textsub{
 footer .menu{
     margin-top: 10px;
     margin-left: 150px;
+}
+
+
+.whatsapp-btn {
+   position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.whatsapp-btn.hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.whatsapp-btn img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn img:hover {
+  transform: scale(1.1);
+}
+
+.scroll-top-btn{
+  position: fixed;
+  bottom: 90px; /* arriba del botón de WhatsApp */
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #5775f6;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 1000;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-top-btn.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover{
+  transform: scale(1.1);
+}
+
+.notificacion {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #192335;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.notificacion.show {
+  opacity: 1;
+  transform: translateY(0);
 }
