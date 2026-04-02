@@ -844,7 +844,7 @@ background-repeat: no-repeat;
 .heroCel{
     height: 250px;
     width: 100%;
-    max-width: 375px;
+    
     background-image: url(imagenes/herocel.png);
    
 }
