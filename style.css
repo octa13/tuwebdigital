@@ -216,7 +216,7 @@ header{
     color: white;
     text-align: left;
     font-size: 20px;
-    font-weight:lighter;
+    font-weight:normal;
 }
 
 h3{
@@ -844,8 +844,10 @@ background-repeat: no-repeat;
 .heroCel{
     height: 250px;
     width: 100%;
-    
-    background-color: #1d1731;
+    background-image: url(imagenes/herocel.png);
+    background-size: cover;      /* 🔥 clave */
+    background-position: center; /* 🔥 centra la imagen */
+    background-repeat: no-repeat;
    
 }
 
@@ -897,7 +899,7 @@ background-repeat: no-repeat;
 .serviciosCel{
  font-family: 'Poppins', sans-serif;
  text-align: center;
- height: 1000px;
+ height: 900px;
 
  padding-top: 20px;
 }
@@ -906,7 +908,7 @@ background-repeat: no-repeat;
 .seccionCel{
     color: #5775f6;
     font-size: 23px;
-  
+    
     margin-bottom: 0px; /*  reduce espacio abajo */
 
 }
@@ -917,13 +919,6 @@ background-repeat: no-repeat;
     color: white;
     margin-top: 0; /*  elimina espacio arriba */
    
-}
-
-
-.serviciosCel .contenedor-servicios{
-
-
-
 }
 
 .serviciosCel .card-servicio{
@@ -955,8 +950,85 @@ background-repeat: no-repeat;
     margin-left: 0;
 }
 
+/* --- BENEFICIOS --- */
+
+.beneficiosCel{
+    background-color: #2c234b;
+    width: 100%;
+  
 }
 
+
+.beneficiosCel .seccion{
+    font-size: 23px;
+    margin-bottom: 0;
+    padding-top: 40px;
+    line-height: 1.1;
+    width: 100%;
+}
+
+.beneficiosCel  .textsub{
+
+    font-size: 14px; 
+    text-align: center;  
+    margin: 0; 
+    margin-top: 0;
+  
+}
+
+
+.tarjetasCel{
+    height: 970px;
+   
+    width: 100%;
+    display: flex;
+  flex-direction: column; /*  uno debajo del otro */
+  align-items: center;    /* centra horizontal */
+  
+}
+
+.tarjetasCel .t1, .t2, .t3, .t4{
+   width: 300px;
+   height: 200px; 
+    margin-right: 0;
+   margin-left: 0;
+   margin-bottom: 35px;
+    
+}
+
+.tarjetasCel .t1{
+    background-image: url(imagenes/tarjet1.png);
+    
+}
+.tarjetasCel .t2{
+   
+    background-image: url(imagenes/tarjet2.png);
+}
+
+.tarjetasCel .t3{
+    background-image: url(imagenes/tarjet3.png);
+}
+
+.tarjetasCel .t4{
+  background-image: url(imagenes/tarjet4.png);
+}
+
+
+.tarjetasCel .textsub1{
+    margin-left: 0;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.tarjetasCel .textsub{
+    margin-left: 0;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 110px;
+}
+
+}
 
  
 
