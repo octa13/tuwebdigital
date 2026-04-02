@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 </head>
 
 
@@ -18,7 +19,7 @@
 <body>
 
 
-
+<div class="versionescritorio">
   <header>
    
     <a href="index.html"><div class="logo"></div></a>
@@ -171,10 +172,155 @@
     <p class="textsub">Copyright © 2026 tuWebdigital <br>
     Todos los derechos reservados.</p>
 </footer>
+</div>
+
+
+<!-------------------------------------VERSIÓN MOBILE-------------------------------------------------->
+<!-------------------------------------VERSIÓN MOBILE-------------------------------------------------->
+<!-------------------------------------VERSIÓN MOBILE-------------------------------------------------->
+
+<div class="versionmobile">
+
+<header class="header-mobile">
+  <div class="logocel"></div>
+
+  <button id="btnMenu" class="btn-menu">☰</button>
+</header>
+
+<div id="overlay" class="overlay"></div>
+
+<nav id="menuMobile" class="menu-mobile">
+  <button id="cerrarMenu" class="cerrar-menu">✕</button>
+ 
+  <a href="#as">SERVICIOS</a>
+  <a href="#ab">POR QUÉ WEB</a>
+  <a href="#ac">CONTACTO</a>
+
+  <div class="menu-redes">
+    <img src="imagenes/instagram.png" alt="Instagram" class="redmob">
+    <img src="imagenes/whatsapp.png" alt="WhatsApp" class="redmob">
+  </div>
+
+</nav>
+
+
+<div class="heroCel">
+        <h1 class="textCel"  data-aos="fade-up" data-aos-duration="600">Diseños Web que <br>transforman negocios</h1> 
+        <p class="textsubCel" data-aos="fade-up" data-aos-delay="150">Creamos experiencias digitales y funcionales. <br>
+        ¿Estás listo para llevar tu negiocio al siguiente nivel?</p> 
+
+        <button class="llamadoCel"  data-aos="fade-up" data-aos-delay="300"><a href="https://wa.me/3855154183" class="botonllama" target="_blank">Quiero mi web</a></button>
+</div>
+
+
+<div class="serviciosCel" id="as">
+  <h2 class="seccionCel"  data-aos="fade-up">Nuestros Servicios</h2>
+        <p class="textsubServ"  data-aos="fade-up">Ofrecemos soluciones web completas <br>adaptadas a las necesidades de tu negocio</p>
+
+        <br>
+
+        <div class="contenedor-servicios"  data-aos="fade-up">
+            <div class="card-servicio">
+                <div class="icono-box">
+                 <img src="imagenes/pet.png" alt="">
+                </div>
+                <h3>Diseño Web</h3>
+                <p class="textsub">
+                Interfaces hermosas y modernas que reflejan la identidad de tu marca
+                </p>
+            </div>
+
+        <div class="card-servicio">
+            <div class="icono-box">
+               <img src="imagenes/pet2.png" alt="">
+                </div>
+                <h3>Responsive Design</h3>
+                <p class="textsub">
+                Sitios web que se adaptan perfectamente a cualquier dispositivo
+                </p>
+        </div>
+
+        <div class="card-servicio">
+            <div class="icono-box">
+                <img src="imagenes/pet3.png" alt="">
+                </div>
+                <h3>Optimización</h3>
+                <p class="textsub">
+                Velocidad, rendimiento y SEO para visibilidad en buscadores
+                </p>
+        </div>
+
+    </div>
+
+
+</div>
 
 
 
 
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--------JS DE LA VERSIÓN MOBILE--------->
+
+
+<!--------Menu desplegable--------->
+<script>
+const btnMenu = document.getElementById("btnMenu");
+const menu = document.getElementById("menuMobile");
+const cerrar = document.getElementById("cerrarMenu");
+const overlay = document.getElementById("overlay");
+
+btnMenu.addEventListener("click", () => {
+  menu.classList.add("active");
+  overlay.classList.add("active");
+});
+
+cerrar.addEventListener("click", () => {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
+/* cerrar tocando el fondo */
+overlay.addEventListener("click", () => {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
+// cerrar al hacer click en links
+document.querySelectorAll(".menu-mobile a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("active");
+  });
+});
+</script>
+<!--------Menu desplegable--------->
+
+
+
+
+
+
+ 
+
+<!--------JS DE LA VERSIÓN MOBILE--------->
 
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>    

@@ -1,8 +1,8 @@
 body{
-    margin: 0;
-    padding: 0;
-    font-family:'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #241d3d 10%, #10192b 90%);
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family:'Poppins', sans-serif !important;
+     background: linear-gradient(to bottom, #241d3d 10%, #10192b 90%);
 
   
 }
@@ -694,121 +694,272 @@ footer .menu{
   transform: translateY(0);
 }
 
+.versionmobile{
+    display: none;
+}
 
 
-/*  -----------------------------------------  VERSIÓN MOVIL -----------------------------------------*/
-/*  -----------------------------------------  VERSIÓN MOVIL -----------------------------------------*/
-/*  -----------------------------------------  VERSIÓN MOVIL -----------------------------------------*/
 
+/*---------------------- version mobile -----------------------------------------------*/
+/*---------------------- version mobile -----------------------------------------------*/
+/*---------------------- version mobile -----------------------------------------------*/
 
 @media (max-width: 768px) {
+ .versionescritorio{
+    display: none;}
+
+
+.versionmobile{
+display: block;
+    }
  
-header{
-    flex-direction: column;
-    height: auto;
-    padding: 20px 0;
-  }
+ /*---BOTON WHATSSAP---*/
+.whatsapp-btn {
+  bottom: 15px; /* opcional: lo sube un poco */
+  right: 15px;
+}
 
-  .logo{
+.whatsapp-btn img {
+  width: 45px;  /* 🔥 más chico */
+  height: 45px;
+}
+
+.scroll-top-btn{
+  bottom: 75px;
+}
+
+/* ------ MENU DESPLEGABLE ------*/
+.header-mobile {
+  height: 80px;
+  background-color:#141c2f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.logocel{
     margin: 0;
-  }
+ height: 50px;
+ width: 120px;
+ margin-left: 20px;
+ background-image: url(imagenes/logo.png);
+background-size: contain;
+background-repeat: no-repeat;
+}
 
-  .menu{
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+
+/* BOTÓN HAMBURGUESA */
+.btn-menu {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* MENÚ LATERAL */
+.menu-mobile {
+  position: fixed;
+  top: 80px;
+  right: -100%;
+  width: 75%;
+  height: calc(100% - 80px); /* ocupa el resto de la pantalla */
+  background-color: #10192b;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 2000;
+}
 
 
-  .herotext{
+/* OVERLAY CON BLUR */
+.overlay {
+  position: fixed;
+  top: 80px; /* 🔥 respeta el header */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 80px);
+
+  background: rgba(0, 0, 0, 0.4); /* oscurece */
+  backdrop-filter: blur(5px); /* 🔥 BLUR REAL */
+  -webkit-backdrop-filter: blur(8px); /* Safari */
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+
+  z-index: 1500;
+}
+
+/* ACTIVO */
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+/* ACTIVO */
+.menu-mobile.active {
+  right: 0;
+}
+
+/* LINKS */
+.menu-mobile a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* 🔥 línea separadora */
+}
+
+/* BOTÓN CERRAR */
+.cerrar-menu {
+  font-size: 25px;
+  background: none;
+  border: none;
+  color: white;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+
+.menu-redes{
+    margin-top: 20px;   
+}
+
+.redmob{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* ------ MENU DESPLEGABLE ------*/
+
+
+.heroCel{
+    height: 250px;
     width: 100%;
-    margin: 0;
-  }
+    max-width: 375px;
+    background-image: url(imagenes/herocel.png);
+   
+}
 
-  .text{
-    font-size: 32px;
-  }
-
-  .textsub{
-    margin-left: 0;
-    font-size: 16px;
-  }
-
-  .llamado{
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .servicios{
-    height: auto;
-    padding: 40px 20px;
-  }
-
-  .contenedor-servicios{
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .beneficios{
-    width: 100%;
-    height: auto;
-    padding: 40px 20px;
-  }
-
-  .tarjetas{
-    grid-template-columns: 1fr;
-  }
-
-  .t1, .t2, .t3, .t4{
-    width: 100%;
-    margin: 0;
-  }
-
-  /* corregir textos que están desplazados */
-
-  .t1 .textsub,
-  .t1 .textsub1,
-  .t3 .textsub,
-  .t3 .textsub1{
-    margin-left: 20px;
-  }
-
-  .contacto{
-    height: auto;
-    padding: 40px 20px;
-  }
-
-  .contenedor-contacto{
-    flex-direction: column;
-    margin: 20px;
-  }
-
-  footer{
-    flex-direction: column;
-    height: auto;
+.textCel{
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
     text-align: center;
-    padding: 20px;
-  }
-
-  footer .menu{
-    margin: 10px 0;
-  }
-
-  footer .textsub{
-    text-align: center;
+    color: white;
     margin: 0;
-  }
+    padding-top: 43px;
+    line-height: 1.1;
+    
+}
 
-  .whatsapp-btn img{
-    width: 50px;
-    height: 50px;
-  }
 
-  .scroll-top-btn{
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
+.textsubCel{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    margin-top: 8px;
+}
+
+.llamadoCel{
+    background-color:#e25118;
+    width: 130px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 10px;
+    margin-top:8px;
+    font-family:'Poppins', sans-serif;
+    box-shadow:  0 0 8px 3px #1f1f1f;
+   margin-left: 32%;
+   animation: pulse 2s infinite
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 
 }
+
+/*---- TARJETAS DE SERVICIOS ----*/
+
+.serviciosCel{
+ font-family: 'Poppins', sans-serif;
+ text-align: center;
+ height: 1000px;
+
+ padding-top: 20px;
+}
+
+
+.seccionCel{
+    color: #5775f6;
+    font-size: 23px;
+  
+    margin-bottom: 0px; /*  reduce espacio abajo */
+
+}
+
+.textsubServ{
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    margin-top: 0; /*  elimina espacio arriba */
+   
+}
+
+
+.serviciosCel .contenedor-servicios{
+
+
+
+}
+
+.serviciosCel .card-servicio{
+
+    background-color:#1c2638;
+    padding: 20px;
+    width: 260px;
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.3s ease;
+
+}
+
+.serviciosCel .icono-box{
+    width: 52px;
+    height: 40px;
+    
+}
+
+.serviciosCel h3{
+    font-size: 17px;
+
+}
+
+.serviciosCel .textsub{
+     font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight:normal;
+    margin-left: 0;
+}
+
+}
+
+
+ 
+
+
+
+ 
