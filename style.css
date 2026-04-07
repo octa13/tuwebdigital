@@ -1028,10 +1028,123 @@ background-repeat: no-repeat;
     margin-top: 110px;
 }
 
+
+.contactoCel{
+
+    background: linear-gradient(to bottom, #241d3d 10%, #10192b 90%);
+  height: 1200px;
 }
 
- 
+.contactoCel .seccion{
+    font-size: 23px;
+    margin-bottom: 0;
+    padding-top: 40px;
+    line-height: 1.1;
+    width: 100%;
+}
 
+
+.contactoCel .textsub{
+    font-size: 14px; 
+    text-align: center;  
+    margin: 0; 
+    margin-top: 0;
+  
+}
+
+
+.contactoCel .formulario{
+  margin: 10px 20px;
+ padding: 40px 20px 10px 20px;
+}
+
+.contactoCel label{
+   font-size: 14px;
+}
+
+.contactoCel .enviar{
+margin-top: 15px;
+height: 30px;
+font-size: 14px;
+}
+
+
+.infoCel{
+margin: 40px 20px 10px 20px;
+background: linear-gradient(135deg, #1c2638, #2a3b5f);
+height: 415px;
+border-radius: 8px;
+
+}
+
+.contactoCel .banred{
+    font-size: 18px;
+}
+
+.contactoCel .redes, .redes2, .redes3{
+height: 50px;
+}
+
+.contactoCel .textsub{
+    font-size: 17px;
+    
+}
+
+.contactoCel .instagrama{
+    font-size: 15px;
+}
+
+.contactoCel .imag{
+    height: 23px;
+}
+
+
+
+.footerCel{
+ background-color:  #030818;
+ width: 100%;
+ height: 280px;
+ display:flex;
+ flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+
+.footerCel .menu{
+   
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+ 
+.footerCel .menu1{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+  
+}
+
+.footerCel .logocel{
+ height: 80px;
+ width: 150px;   
+ margin: 0;
+ padding: 0;
+
+}
+
+.footerCel .textsub{
+   font-size: 14px;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   margin-top: 15px;
+  
+}
+
+
+
+}
 
 
  
