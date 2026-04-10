@@ -1014,13 +1014,65 @@ background-repeat: no-repeat;
 
 .tarjetasCel .t1, .t2, .t3, .t4{
    width: 350px;
-   height: 200px; 
+   height: 250px; 
     margin-right: 0;
    margin-left: 0;
    margin-bottom: 35px;
    background-color: #1c1532 !important;
     
 }
+
+/*----------------------- ---------------------------------------------- */
+/*----------------------- ---------------------------------------------- */
+/*----------------------- ---------------------------------------------- */
+/*----------------------- ---------------------------------------------- */
+.tarjetasCel .t1,
+.tarjetasCel .t2,
+.tarjetasCel .t3,
+.tarjetasCel .t4 {
+    width: 350px;
+    height: 250px;
+    margin-bottom: 35px;
+    background-color: #1c1532 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* capa gradient */
+.tarjetasCel .t1::before,
+.tarjetasCel .t2::before,
+.tarjetasCel .t3::before,
+.tarjetasCel .t4::before {
+    content: "";
+    position: absolute;
+    bottom: 0;           /* lo pegamos abajo */
+    left: 0;
+    width: 100%;
+    height: 40%;         /* solo el 20% */
+    background: linear-gradient(to top, #0f0f0f, transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* hover */
+.tarjetasCel .t1:hover::before,
+.tarjetasCel .t2:hover::before,
+.tarjetasCel .t3:hover::before,
+.tarjetasCel .t4:hover::before {
+    opacity: 1;
+}
+
+/* texto arriba del gradient */
+.tarjetasCel .t1 p,
+.tarjetasCel .t2 p,
+.tarjetasCel .t3 p,
+.tarjetasCel .t4 p {
+    position: relative;
+    z-index: 2;
+}
+
+
 
 .tarjetasCel .t1{
     background-image: url(imagenes/tarjet1.png);
